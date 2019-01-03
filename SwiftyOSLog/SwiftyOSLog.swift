@@ -10,6 +10,8 @@ import os.log
 
 public class SwiftyOSLog {
     private var log: OSLog
+    private var subsystem: Subsystem?
+    private var category: Category?
     
     //region Init
     
@@ -17,8 +19,11 @@ public class SwiftyOSLog {
         return SwiftyOSLog(log: OSLog.default)
     }
     
-    public init(subsystem: String, category: String) {
-        log = OSLog(subsystem: subsystem, category: category)
+    public init(subsystem: Subsystem, category: Category) {
+        self.subsystem = subsystem
+        self.category = category
+        
+        log = OSLog(subsystem: subsystem.name, category: category.name)
     }
     
     public init(log: OSLog) {
@@ -74,6 +79,12 @@ public class SwiftyOSLog {
     }
     
     //endregion
+}
+
+extension SwiftyOSLog: Equatable {
+    public static func == (lhs: SwiftyOSLog, rhs: SwiftyOSLog) -> Bool {
+        return lhs.subsystem == rhs.subsystem && lhs.category == rhs.category
+    }
 }
 
 private extension SwiftyOSLog {

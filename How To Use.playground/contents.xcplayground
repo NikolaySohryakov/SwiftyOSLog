@@ -3,5 +3,6 @@
     <pages>
         <page name='Default logger'/>
         <page name='Custom logger'/>
+        <page name='Coordinator'/>
     </pages>
 </playground>
