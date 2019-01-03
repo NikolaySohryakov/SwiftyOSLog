@@ -32,6 +32,18 @@ public class SwiftyOSLog {
     
     //endregion
     
+    //region Default
+    
+    public func `default`(_ message: String) {
+        log(message, type: .info)
+    }
+     
+    public func `default`(_ message: StaticString) {
+        log(message, type: .default)
+    }
+    
+    //endregion
+    
     //region Info
     
     public func info(_ message: String) {

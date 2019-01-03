@@ -7,6 +7,7 @@ let subsystem = Subsystem.current
 let category = Category.default
 let log = SwiftyOSLogCoordinator.shared.log(for: subsystem, category: category)
 
+log.default("Default message")
 log.info("Info message")
 log.debug("Debug message")
 log.error("Error message")
