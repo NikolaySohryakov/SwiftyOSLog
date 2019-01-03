@@ -21,7 +21,7 @@ Built on top of iOS/OS X `os_log` SwiftyOSLog makes use of it easy and laconic.
 
 #### Import package
 
-```
+```swift
 import SwiftyOSLog
 ```
 
@@ -29,17 +29,17 @@ import SwiftyOSLog
 
 Use default logger
 
-```
+```swift
 let log = SwiftyOSLog.default
 ```
 or a logger for a specific subsystem and category
-```
+```swift
 let subsystem = Subsystem("com.your_company.subsystem_name")
 let category = Category("Chat")
 let log = SwiftyOSLog(subsystem: subsystem, category: category)
 ```
-or let `SwiftyOSLogCoordinator` manage all your loggers.
-```
+or let `SwiftyOSLogCoordinator` manage all your loggers:
+```swift
 let subsystem = Subsystem.current
 let category = Category.default
 let log = SwiftyOSLogCoordinator.shared.log(for: subsystem, category: category)
@@ -51,12 +51,12 @@ Logging mechanism is fully compatible to what's described at [Logging | Apple De
 
 Log messages should be of `StaticString` type:
 
-```
+```swift
 log.info("Info message")
 ```
 
 In case if you need a more complex message, use format specifiers described at [Formatting Log Messages](https://developer.apple.com/documentation/os/logging#1682416):
-```
+```swift
 log.default("%{public}@", "Formatted message")
 ```
 
