@@ -17,6 +17,15 @@ Built on top of iOS/OS X `os_log` SwiftyOSLog makes use of it easy and laconic.
 * Supports macOS `Console` GUI or `log` comman line tool
 * Takes care of a different loggers
 
+# Installation
+
+Using Cocoapods:
+```ruby
+target 'MyApp' do
+  pod 'SwiftyOSLog', '~> 1.0'
+end
+```
+
 # Usage
 
 #### Import package
