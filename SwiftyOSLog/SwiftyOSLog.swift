@@ -91,8 +91,6 @@ public class SwiftyOSLog {
         case 0:
             os_log(format, log: log, type: type)
         case 1:
-            print("Args[0] = \(args[0])")
-            print("Format: \(format)")
             os_log(format, log: log, type: type, args[0])
         case 2:
             os_log(format, log: log, type: type, args[0], args[1])
